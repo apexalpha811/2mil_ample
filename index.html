@@ -214,7 +214,10 @@ p+p{margin-top:14px}
 .chip.r{border-color:rgba(192,141,124,0.55);color:var(--rose)}
 
 /* ---------------- TIERS ---------------- */
-.tiergrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+/* Column count follows the number of tiers actually on offer — ample dropped to
+   three when the Day Pass was withdrawn. Set via a custom property, not an
+   inline style, so the mobile breakpoints below can still override it. */
+.tiergrid{display:grid;grid-template-columns:repeat(var(--tier-cols,4),1fr);gap:16px;margin-top:30px}
 .tier{
   background:var(--forest);border:1px solid var(--eucalyptus);border-radius:var(--radius);
   padding:22px;display:flex;flex-direction:column;
@@ -592,7 +595,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 <section id="membership">
   <div class="eyebrow">Membership architecture</div>
   <h2>A ladder, not a gate.</h2>
-  <p class="lead mt">Four tiers, each a genuine step up rather than a repackaging of the last. The cheap annual tier is the funnel; the capped monthly tiers are the business. Mechanics follow the proven playbook: a three-month minimum then month-to-month, credits that roll over while active and expire on cancellation, freezes on seven days' notice, tier changes after the initial commitment.</p>
+  <p class="lead mt"><span id="tierCount">Four tiers</span>, each a genuine step up rather than a repackaging of the last. The cheap annual tier is the funnel; the capped monthly tiers are the business. Mechanics follow the proven playbook: a three-month minimum then month-to-month, credits that roll over while active and expire on cancellation, freezes on seven days' notice, tier changes after the initial commitment.</p>
   <div class="tiergrid" id="tierGrid"></div>
 
   <div class="card accent mt2">
@@ -962,9 +965,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   function renderTiers(s){
     var g = document.getElementById('tierGrid');
     clear(g);
+    // Tier counts are keyed by BASE scenario, so the private-equity variants
+    // (ample15, surgical20) must read through dataKey. Reading s.key directly
+    // returns undefined on those sites, which silently emptied this grid.
+    var ck = s.dataKey || s.key;
     // A tier with no count is not on offer in this scenario — ample withdrew
     // the Day Pass in Aug 2026. Rendering it at zero reads as an error.
-    D.tiers.filter(function(t){ return t.counts[s.key] > 0; }).forEach(function(t){
+    var live = D.tiers.filter(function(t){ return t.counts[ck] > 0; });
+    g.style.setProperty('--tier-cols', live.length);
+    document.getElementById('tierCount').textContent =
+      ['', 'One tier', 'Two tiers', 'Three tiers', 'Four tiers', 'Five tiers'][live.length] || (live.length + ' tiers');
+    live.forEach(function(t){
       var c = el('div', 'tier' + (t.id === 'longevity' ? ' hero-tier' : ''));
       c.appendChild(el('div','tname', t.name));
       c.appendChild(el('div','tprice', '$' + t.price.toLocaleString('en-US')));
@@ -974,7 +985,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
       t.includes.forEach(function(i){ ul.appendChild(el('li', null, i)); });
       c.appendChild(ul);
       var foot = el('div','tcount');
-      foot.appendChild(el('b', null, intfmt(t.counts[s.key])));
+      foot.appendChild(el('b', null, intfmt(t.counts[ck])));
       var label = t.isMembership ? ' members at stabilization' : ' visits per month';
       foot.appendChild(document.createTextNode(label + (t.capped ? ' · capped' : '')));
       c.appendChild(foot);

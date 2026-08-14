@@ -116,7 +116,7 @@ Two of the three components are actual vendor terms. The balance is the rest of 
 
 # What the margins pay for
 
-Cost of goods runs $143,269 a month against $551,301 of revenue, a blended 74.0% margin. What they cover:
+Cost of goods runs $145,469 a month against $571,926 of revenue, a blended 74.6% margin. What they cover:
 
 | Category | Margin | What the cost side is |
 |---|---|---|
@@ -127,7 +127,7 @@ Cost of goods runs $143,269 a month against $551,301 of revenue, a blended 74.0%
 | Surgery — facility fee | 78–80% | Disposables, implants, drugs and linens, instrument reprocessing. Clinical staff sits in fixed overhead and the surgeon takes no share of the facility fee, which is why these exceed the treatment-room lines. |
 | Surgery — full fee | 73–76% | As above, plus graft handling and technician time on hair restoration and laser consumables on ablative resurfacing. |
 
-Circuit consumables — towels, laundry, water and amenities — are carried separately at $8 a visit across 2,070 monthly visits, or $16,560.
+Circuit consumables — towels, laundry, water and amenities — are carried separately at $8 a visit across 2,345 monthly visits, or $18,760.
 
 
 # Use of funds, line by line
@@ -212,12 +212,12 @@ Sized against the modelled cash trough, not set to a round number.
 
 | Scenario | Project | Private investment | SBA 7(a) loan | Stabilized DSCR |
 |---|---|---|---|---|
-| Ample · $1.5M private | $4,750,000 | $1,500,000 (32%) | $3,250,000 | 4.35x |
-| Ample · $2.0M private | $4,750,000 | $2,000,000 (42%) | $2,750,000 | 5.14x |
+| Ample · $1.5M private | $4,750,000 | $1,500,000 (32%) | $3,250,000 | 4.74x |
+| Ample · $2.0M private | $4,750,000 | $2,000,000 (42%) | $2,750,000 | 5.61x |
 
 Debt service is interest-only for the first 18 months, then amortises over the remaining 102. Rate assumption is WSJ Prime 6.75% plus the 2.75% maximum spread permitted on 7(a) loans over $350,000.
 
-The working capital and debt service reserve of $1,146,000 is **computed, not chosen** — it is sized against a modelled cash trough of $227,320 at month 10. That is why it is not a round number.
+The working capital and debt service reserve of $1,146,000 is **computed, not chosen** — it is sized against a modelled cash trough of $208,342 at month 10. That is why it is not a round number.
 
 
 # Rent sensitivity
@@ -226,10 +226,10 @@ Rent is the largest unsupported assumption, so here is what happens if it is wro
 
 | Rent $/SF/month NNN | Monthly rent | Operating income /mo | Annual | DSCR |
 |---|---|---|---|---|
-| $5.50 (modelled) | $26,400 | $202,422 | $2,429,064 | 4.35x |
-| $6.00 | $28,800 | $200,022 | $2,400,264 | 4.30x |
-| $6.50 | $31,200 | $197,622 | $2,371,464 | 4.24x |
-| $7.00 | $33,600 | $195,222 | $2,342,664 | 4.19x |
+| $5.50 (modelled) | $26,400 | $220,847 | $2,650,164 | 4.74x |
+| $6.00 | $28,800 | $218,447 | $2,621,364 | 4.69x |
+| $6.50 | $31,200 | $216,047 | $2,592,564 | 4.64x |
+| $7.00 | $33,600 | $213,647 | $2,563,764 | 4.59x |
 
 *Coverage against the 1.25x underwriting convention.*
 
