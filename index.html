@@ -519,13 +519,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 <section id="model">
   <div class="eyebrow">The model</div>
   <h2>One building. Two layers. Different doors.</h2>
-  <p class="lead mt">The clinic underneath is a licensed, cash-pay medical practice open to any member of the public at rack rate. The club on top is a capped, members-only social layer. Day passes let anyone taste the club without joining, and membership never becomes a condition of receiving care.</p>
+  <p class="lead mt">The clinic underneath is a licensed, cash-pay medical practice open to any member of the public at rack rate. The club on top is a capped, members-only social layer. <span class="dp">Day passes let anyone taste the club without joining, and membership</span><span class="ndp">Membership</span> never becomes a condition of receiving care.</p>
 
   <div class="layers">
     <div class="layer layer-club">
       <div class="tag">Members only &middot; capped</div>
       <h3>The Club</h3>
-      <div class="who muted">Residents and Longevity members. Day pass holders by the visit.</div>
+      <div class="who muted">Residents and Longevity members.<span class="dp"> Day pass holders by the visit.</span></div>
       <div class="chips">
         <span class="chip r">Contrast suite</span>
         <span class="chip r">Sauna &amp; cold plunge ritual</span>
@@ -608,7 +608,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   <h2>The open clinic is the top of the funnel.</h2>
   <p class="lead mt">Because anyone can book a procedure without joining, every non-member treatment is a paid introduction. The conversion path runs in one direction and each step is cheap to take.</p>
   <div class="grid g4 mt2">
-    <div class="card"><div class="pill">Step one</div><h3 class="mt">Walks in</h3><p class="muted mt small">Books a procedure or buys a day pass. Pays rack rate. Owes nothing further.</p></div>
+    <div class="card"><div class="pill">Step one</div><h3 class="mt">Walks in</h3><p class="muted mt small">Books a procedure<span class="dp"> or buys a day pass</span>. Pays rack rate. Owes nothing further.</p></div>
     <div class="card"><div class="pill">Step two</div><h3 class="mt">Becomes a Friend</h3><p class="muted mt small">$300 a year pays for itself on roughly two procedures. Low friction, high volume, and it captures the database.</p></div>
     <div class="card"><div class="pill">Step three</div><h3 class="mt">Becomes a Resident</h3><p class="muted mt small">Wants the circuit and the room, not just the treatment. This is where recurring revenue begins.</p></div>
     <div class="card accent"><div class="pill on">Step four</div><h3 class="mt">Becomes Longevity</h3><p class="muted mt small">Physician-led programming. Hard capped. The highest retention and the highest lifetime value in the building.</p></div>
@@ -962,7 +962,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   function renderTiers(s){
     var g = document.getElementById('tierGrid');
     clear(g);
-    D.tiers.forEach(function(t){
+    // A tier with no count is not on offer in this scenario — ample withdrew
+    // the Day Pass in Aug 2026. Rendering it at zero reads as an error.
+    D.tiers.filter(function(t){ return t.counts[s.key] > 0; }).forEach(function(t){
       var c = el('div', 'tier' + (t.id === 'longevity' ? ' hero-tier' : ''));
       c.appendChild(el('div','tname', t.name));
       c.appendChild(el('div','tprice', '$' + t.price.toLocaleString('en-US')));
@@ -1083,7 +1085,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
      ['plus','plus membership fees','Friends, Resident and Longevity recurring revenue.', s.membershipRevenue],
      ['plus','plus day pass and access','Single-visit circuit access, no membership required.', s.accessRevenue],
      ['sum','Total revenue','Per month at stabilization.', s.totalRevenue]
-    ].forEach(function(r){
+    ].filter(function(r){ return !(r[1].indexOf('day pass') > -1 && !s.accessRevenue); })
+     .forEach(function(r){
       var row = el('div','wf-row ' + r[0]);
       var k = el('div','k', r[1]);
       k.appendChild(el('small', null, r[2]));
@@ -1437,6 +1440,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   function render(){
     var s = D.scenarios[scen];
     renderScenarioChrome(s);
+    // Copy that only holds when the scenario sells day passes. Ample withdrew
+    // them in Aug 2026; lean and surgical still offer them, and all five sites
+    // share this one template, so the prose has to switch rather than be cut.
+    var hasDayPass = s.accessRevenue > 0;
+    Array.prototype.forEach.call(document.querySelectorAll('.dp'), function(n){
+      n.style.display = hasDayPass ? '' : 'none';
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.ndp'), function(n){
+      n.style.display = hasDayPass ? 'none' : '';
+    });
     bind(s);
     renderClinicChips(s); renderSurgery(s);
     renderTiers(s); renderSpace(s); renderCapacity(s); renderServices(s);
