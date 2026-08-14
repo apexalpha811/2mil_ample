@@ -1903,7 +1903,7 @@ window.LK = {
     ],
     [
      "Recovery technology: HBOT purchased, Ammortal deposit",
-     182000
+     165950
     ],
     [
      "FF&E, lounge, millwork, retail",
@@ -1919,7 +1919,7 @@ window.LK = {
     ],
     [
      "Working capital and debt service reserve",
-     1146000
+     1162050
     ]
    ],
    "lines": [
@@ -2939,7 +2939,7 @@ window.LK = {
     "month": 10,
     "amount": -265145
    },
-   "reserve": 1146000,
+   "reserve": 1162050,
    "rateStressPasses": true,
    "rateStress": {
     "rate": 0.115,
@@ -4237,7 +4237,7 @@ window.LK = {
     ],
     [
      "Recovery technology: HBOT purchased, Ammortal deposit",
-     182000
+     165950
     ],
     [
      "FF&E, lounge, millwork, retail",
@@ -4253,7 +4253,7 @@ window.LK = {
     ],
     [
      "Working capital and debt service reserve",
-     1146000
+     1162050
     ]
    ],
    "dataKey": "ample",
@@ -5276,7 +5276,7 @@ window.LK = {
     "month": 10,
     "amount": -208342
    },
-   "reserve": 1146000,
+   "reserve": 1162050,
    "rateStressPasses": true,
    "rateStress": {
     "rate": 0.115,
@@ -5399,7 +5399,7 @@ window.LK = {
     ],
     [
      "Recovery technology: HBOT purchased, Ammortal deposit",
-     182000
+     165950
     ],
     [
      "FF&E, lounge, millwork, retail",
@@ -5415,7 +5415,7 @@ window.LK = {
     ],
     [
      "Working capital and debt service reserve",
-     1146000
+     1162050
     ]
    ],
    "dataKey": "ample",
@@ -6438,7 +6438,7 @@ window.LK = {
     "month": 10,
     "amount": -180634
    },
-   "reserve": 1146000,
+   "reserve": 1162050,
    "rateStressPasses": true,
    "rateStress": {
     "rate": 0.115,

@@ -164,18 +164,18 @@ Purchased portion of the medical and aesthetic package.
 > Category ranges come from the prior Playa Vista line-item budget: IV and exam $80K–$150K, PRP processing $40K–$125K, aesthetic laser $150K–$400K, RF microneedling $80K–$180K, body contouring $100K–$275K, diagnostics $80K–$180K. That budget is an internal planning document, not vendor quotes.
 
 
-## Recovery technology: HBOT purchased, Ammortal deposit — $182,000
+## Recovery technology: HBOT purchased, Ammortal deposit — $165,950
 
-Only the hyperbaric chamber is bought outright. The Ammortal chambers are financed, so the capital cost is the deposit alone. Aescape cannot be purchased at all — it is a monthly subscription and carries no capital cost.
+Only the hyperbaric chamber is bought outright. The Ammortal chamber is financed, so the capital cost is the deposit alone. Aescape cannot be purchased at all — it is a monthly subscription and carries no capital cost.
 
 | Component | Amount |
 |---|---|
 | Hyperbaric oxygen chamber, purchased | $150,000 |
-| Ammortal chambers (2 units, $160,000 each), 10% finance deposit | $32,000 |
-| Aescape robotic massage (2 units), subscription only | $0 |
-| **Total** | **$182,000** |
+| Ammortal chamber ($159,500 list), 10% finance deposit | $15,950 |
+| Aescape robotic massage (1 unit), subscription only | $0 |
+| **Total** | **$165,950** |
 
-> The two Ammortal chambers are financed together rather than sequentially: $320,000 of equipment, $32,000 down, $6,500 a month thereafter. Both the Ammortal payment and the Aescape subscription appear in the monthly equipment lease line rather than here.
+> The single Ammortal chamber lists at $159,500 including delivery, install and onboarding, with $15,950 down and roughly $3,000 a month thereafter. Both the Ammortal payment and the Aescape subscription appear in the monthly equipment lease line rather than here.
 
 
 ## FF&E, lounge, millwork, retail — $430,000
@@ -199,7 +199,7 @@ Identity, site, photography, launch campaign and the founding member drive.
 > Sized against the founding member target — the campaign has to convert enough pre-opening memberships to matter, and those proceeds are modelled as offsetting construction-period burn.
 
 
-## Working capital and debt service reserve — $1,146,000
+## Working capital and debt service reserve — $1,162,050
 
 Sized against the modelled cash trough, not set to a round number.
 
@@ -217,7 +217,7 @@ Sized against the modelled cash trough, not set to a round number.
 
 Debt service is interest-only for the first 18 months, then amortises over the remaining 102. Rate assumption is WSJ Prime 6.75% plus the 2.75% maximum spread permitted on 7(a) loans over $350,000.
 
-The working capital and debt service reserve of $1,146,000 is **computed, not chosen** — it is sized against a modelled cash trough of $208,342 at month 10. That is why it is not a round number.
+The working capital and debt service reserve of $1,162,050 is **computed, not chosen** — it is sized against a modelled cash trough of $208,342 at month 10. That is why it is not a round number.
 
 
 # Rent sensitivity

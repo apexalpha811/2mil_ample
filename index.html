@@ -1089,7 +1089,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   function renderWaterfall(s){
     var w = document.getElementById('waterfall');
     clear(w);
-    [['', 'Service delivery at rack value', 'All 17 lines, every session, priced at what a walk-in pays.', s.rackValue],
+    // Line count is per scenario: ample dropped three aesthetics lines and split
+    // IV into three dose tiers, so "17" stopped being true for everyone.
+    var liveLines = s.lines.filter(function(l){ return l.sessions > 0; }).length;
+    [['', 'Service delivery at rack value', 'All ' + liveLines + ' lines, every session, priced at what a walk-in pays.', s.rackValue],
      ['minus','less member credit redemption','Residents and Longevity members drawing on credits rather than paying cash.', -s.redeemed],
      ['minus','less member and Friends discount','Blended discount on à la carte purchases beyond the credit bank.', -s.memberDiscount],
      ['sum','À la carte revenue','What non-members and cash-paying members actually pay.', s.alaCarteNet],
